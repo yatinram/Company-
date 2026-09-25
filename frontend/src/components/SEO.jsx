@@ -1,10 +1,9 @@
-import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import { useEffect } from 'react';
 
 const SITE_URL = 'https://aventixsolutions.vercel.app';
-const DEFAULT_TITLE = 'Aventrix Solutions — Transforming Ideas Into Digital Reality';
-const DEFAULT_DESCRIPTION = 'Aventrix Solutions is a leading software development company delivering cutting-edge Web, Mobile, Cloud, AI & SaaS solutions for businesses worldwide.';
-const DEFAULT_KEYWORDS = 'software development, web development company, mobile app development, custom AI solutions, SaaS development, enterprise software, digital transformation, Aventrix Solutions';
+const DEFAULT_TITLE = 'Aventrix Solutions — Custom Web, Mobile & AI Software Development';
+const DEFAULT_DESCRIPTION = 'Aventrix Solutions is a top-tier software development and digital transformation company. We build high-performance Web Applications, Mobile Apps, Cloud Systems, and AI-powered solutions.';
+const DEFAULT_KEYWORDS = 'software development company, web development agency, mobile app developers, AI software solutions, cloud computing, SaaS development, IT consulting, Aventrix Solutions';
 const DEFAULT_OG_IMAGE = `${SITE_URL}/aventrix-logo.png`;
 
 export default function SEO({
@@ -15,7 +14,6 @@ export default function SEO({
   ogType = 'website',
   ogImage = DEFAULT_OG_IMAGE,
   schema = null,
-  noIndex = false,
 }) {
   const fullTitle = title
     ? `${title} | Aventrix Solutions`
@@ -23,106 +21,58 @@ export default function SEO({
   
   const currentUrl = canonicalUrl ? `${SITE_URL}${canonicalUrl}` : SITE_URL;
 
-  // Default Organization & Website Schema
-  const defaultSchema = {
-    '@context': 'https://schema.org',
-    '@graph': [
-      {
-        '@type': 'Organization',
-        '@id': `${SITE_URL}/#organization`,
-        name: 'Aventrix Solutions',
-        url: SITE_URL,
-        logo: {
-          '@type': 'ImageObject',
-          url: `${SITE_URL}/aventrix-logo.png`,
-          caption: 'Aventrix Solutions Logo',
-        },
-        description: DEFAULT_DESCRIPTION,
-        email: 'info@aventrixsolutions.com',
-        sameAs: [
-          'https://www.linkedin.com/company/aventrixsolutions',
-          'https://twitter.com/aventrixsol',
-          'https://github.com/aventrixsolutions'
-        ],
-      },
-      {
-        '@type': 'WebSite',
-        '@id': `${SITE_URL}/#website`,
-        url: SITE_URL,
-        name: 'Aventrix Solutions',
-        description: DEFAULT_DESCRIPTION,
-        publisher: {
-          '@id': `${SITE_URL}/#organization`,
-        },
-        inLanguage: 'en-US',
-      },
-      {
-        '@type': 'ProfessionalService',
-        '@id': `${SITE_URL}/#service`,
-        name: 'Aventrix Solutions',
-        url: SITE_URL,
-        image: `${SITE_URL}/aventrix-logo.png`,
-        priceRange: '$$$',
-        telephone: '+91 99999 99999',
-        address: {
-          '@type': 'PostalAddress',
-          addressCountry: 'India',
-        },
-        openingHoursSpecification: {
-          '@type': 'OpeningHoursSpecification',
-          dayOfWeek: [
-            'Monday',
-            'Tuesday',
-            'Wednesday',
-            'Thursday',
-            'Friday',
-            'Saturday'
-          ],
-          opens: '09:00',
-          closes: '19:00',
-        },
-      },
-    ],
-  };
+  useEffect(() => {
+    // 1. Title
+    document.title = fullTitle;
 
-  const schemaToRender = schema ? schema : defaultSchema;
+    // Helper to set or create a meta tag
+    const setMetaTag = (attribute, name, content) => {
+      let element = document.querySelector(`meta[${attribute}="${name}"]`);
+      if (!element) {
+        element = document.createElement('meta');
+        element.setAttribute(attribute, name);
+        document.head.appendChild(element);
+      }
+      element.setAttribute('content', content || '');
+    };
 
-  return (
-    <Helmet>
-      {/* Basic Meta Tags */}
-      <title>{fullTitle}</title>
-      <meta name="description" content={description} />
-      <meta name="keywords" content={keywords} />
-      <meta name="google-site-verification" content="bi1qn3wghtSRnnY8BcadaqW83-hJj76D5W4Px-_bvLA" />
-      {noIndex ? (
-        <meta name="robots" content="noindex, nofollow" />
-      ) : (
-        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-      )}
-      
-      {/* Canonical Link */}
-      <link rel="canonical" href={currentUrl} />
+    // 2. Standard Meta Tags
+    setMetaTag('name', 'description', description);
+    setMetaTag('name', 'keywords', keywords);
 
-      {/* Open Graph / Facebook */}
-      <meta property="og:type" content={ogType} />
-      <meta property="og:site_name" content="Aventrix Solutions" />
-      <meta property="og:title" content={fullTitle} />
-      <meta property="og:description" content={description} />
-      <meta property="og:url" content={currentUrl} />
-      <meta property="og:image" content={ogImage} />
-      <meta property="og:locale" content="en_US" />
+    // 3. OpenGraph Tags
+    setMetaTag('property', 'og:title', fullTitle);
+    setMetaTag('property', 'og:description', description);
+    setMetaTag('property', 'og:url', currentUrl);
+    setMetaTag('property', 'og:type', ogType);
+    setMetaTag('property', 'og:image', ogImage);
 
-      {/* Twitter Card */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content="@aventrixsol" />
-      <meta name="twitter:title" content={fullTitle} />
-      <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={ogImage} />
+    // 4. Twitter Card Tags
+    setMetaTag('name', 'twitter:title', fullTitle);
+    setMetaTag('name', 'twitter:description', description);
+    setMetaTag('name', 'twitter:image', ogImage);
 
-      {/* Structured Data (JSON-LD) */}
-      <script type="application/ld+json">
-        {JSON.stringify(schemaToRender)}
-      </script>
-    </Helmet>
-  );
+    // 5. Canonical Link
+    let canonicalTag = document.querySelector('link[rel="canonical"]');
+    if (!canonicalTag) {
+      canonicalTag = document.createElement('link');
+      canonicalTag.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonicalTag);
+    }
+    canonicalTag.setAttribute('href', currentUrl);
+
+    // 6. Structured Data Schema (JSON-LD)
+    if (schema) {
+      let scriptTag = document.getElementById('dynamic-page-schema');
+      if (!scriptTag) {
+        scriptTag = document.createElement('script');
+        scriptTag.id = 'dynamic-page-schema';
+        scriptTag.type = 'application/ld+json';
+        document.head.appendChild(scriptTag);
+      }
+      scriptTag.textContent = JSON.stringify(schema);
+    }
+  }, [fullTitle, description, keywords, currentUrl, ogType, ogImage, schema]);
+
+  return null;
 }
