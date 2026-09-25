@@ -22,6 +22,7 @@ import StatCounter from '../components/StatCounter';
 import TestimonialCarousel from '../components/TestimonialCarousel';
 import IndustryCard from '../components/IndustryCard';
 import StackingCards from '../components/StackingCards';
+import SEO from '../components/SEO';
 import api from '../config/api';
 
 // Default services for accordion when API unavailable
@@ -163,6 +164,13 @@ const Home = () => {
 
   return (
     <>
+      <SEO
+        title="Custom Web, Mobile & AI Software Development"
+        description="Aventrix Solutions builds top-tier websites, mobile apps, SaaS platforms, and AI-powered software solutions to help startups and enterprises accelerate growth."
+        keywords="software development company, web development agency, mobile app development, React developers, Node.js development, AI software, IT consulting, Aventrix Solutions"
+        canonicalUrl="/"
+      />
+
       {/* ============ HERO ============ */}
       <section className="hero-section">
         <div style={{ position: 'relative', zIndex: 1, maxWidth: '860px', margin: '0 auto' }}>

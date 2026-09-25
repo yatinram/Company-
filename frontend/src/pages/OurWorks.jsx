@@ -13,6 +13,7 @@ import {
   FaServer
 } from 'react-icons/fa';
 import AnimatedSection from '../components/AnimatedSection';
+import SEO from '../components/SEO';
 import api from '../config/api';
 
 const fallbackWorks = [
@@ -69,6 +70,13 @@ export default function OurWorks() {
 
   return (
     <div className="page-wrapper">
+      <SEO
+        title="Portfolio & Case Studies — Our Works"
+        description="Explore custom software, web platforms, and mobile apps built by Aventrix Solutions. Check out our client case studies and digital transformation projects."
+        keywords="software portfolio, client case studies, web development projects, IT project showcase, Aventrix Our Works"
+        canonicalUrl="/our-works"
+      />
+
       {/* Hero Section */}
       <section style={{ background: '#2d2d2d', color: '#fff', paddingTop: '160px', paddingBottom: '90px', textAlign: 'center' }}>
         <div className="container">

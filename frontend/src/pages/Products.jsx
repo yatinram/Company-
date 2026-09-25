@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaArrowRight, FaBox, FaCheck, FaSeedling, FaFileInvoiceDollar, FaChartLine, FaShieldAlt } from 'react-icons/fa';
 import AnimatedSection from '../components/AnimatedSection';
+import SEO from '../components/SEO';
 import api from '../config/api';
 
 const fallbackProducts = [
@@ -50,6 +51,13 @@ export default function Products() {
 
   return (
     <div className="page-wrapper">
+      <SEO
+        title="Enterprise Software Products & SaaS Solutions"
+        description="Discover industry-leading software products developed by Aventrix Solutions, including KrushiBill ERP and custom business automation tools."
+        keywords="KrushiBill ERP, agricultural billing software, pesticide seeds billing ERP, enterprise SaaS products, software solutions India, Aventrix Products"
+        canonicalUrl="/products"
+      />
+
       {/* Products Hero */}
       <section style={{ background: '#2d2d2d', color: '#fff', paddingTop: '160px', paddingBottom: '80px', textAlign: 'center' }}>
         <div className="container">

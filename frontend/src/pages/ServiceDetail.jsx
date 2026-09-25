@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { FaArrowLeft, FaArrowRight, FaCheckCircle, FaGlobe, FaMobileAlt, FaCode, FaRobot, FaComments, FaTools, FaCogs } from 'react-icons/fa';
 import AnimatedSection from '../components/AnimatedSection';
+import SEO from '../components/SEO';
 import api from '../config/api';
 
 const iconMap = {
@@ -125,6 +126,13 @@ export default function ServiceDetail() {
 
   return (
     <div className="page-wrapper">
+      <SEO
+        title={`${currentService.title} Services`}
+        description={currentService.description || `Professional ${currentService.title} by Aventrix Solutions. Scalable, high quality and tailored to your enterprise goals.`}
+        keywords={`${currentService.title}, software engineering, custom IT development, Aventrix Solutions`}
+        canonicalUrl={`/services/${id}`}
+      />
+
       {/* Service Hero */}
       <section style={{ background: '#2d2d2d', color: '#fff', paddingTop: '160px', paddingBottom: '90px' }}>
         <div className="container">

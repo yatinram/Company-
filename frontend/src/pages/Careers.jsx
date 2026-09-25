@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaUserPlus, FaArrowRight, FaMapMarkerAlt, FaBriefcase, FaCode } from 'react-icons/fa';
 import AnimatedSection from '../components/AnimatedSection';
+import SEO from '../components/SEO';
 
 const openings = [
   {
@@ -33,6 +34,13 @@ const openings = [
 export default function Careers() {
   return (
     <div className="page-wrapper">
+      <SEO
+        title="Careers & Job Openings — Join Our Engineering Team"
+        description="Join Aventrix Solutions in Ahmedabad. Explore job openings for Full-Stack Developers, AI Engineers, UI/UX Designers, and Cloud Architects."
+        keywords="software jobs Ahmedabad, IT careers, React developer jobs, AI engineer hiring, Aventrix Careers"
+        canonicalUrl="/careers"
+      />
+
       <section style={{ background: '#2d2d2d', color: '#fff', paddingTop: '160px', paddingBottom: '80px', textAlign: 'center' }}>
         <div className="container">
           <div style={{ maxWidth: '800px', margin: '0 auto' }}>

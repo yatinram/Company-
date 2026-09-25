@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaLeaf, FaShoppingCart, FaHeartbeat, FaGraduationCap, FaArrowRight, FaCheck } from 'react-icons/fa';
 import AnimatedSection from '../components/AnimatedSection';
+import SEO from '../components/SEO';
 
 const industries = [
   {
@@ -81,6 +82,13 @@ const industries = [
 export default function Industries() {
   return (
     <div className="page-wrapper">
+      <SEO
+        title="Industry Solutions — Agriculture, Retail, Healthcare & Education"
+        description="Aventrix Solutions provides customized software architecture and digital solutions across Agriculture, Retail & E-commerce, Healthcare, and Education sectors."
+        keywords="agriculture software, retail POS systems, healthcare software solutions, EdTech development, industry IT solutions, Aventrix Industries"
+        canonicalUrl="/industries"
+      />
+
       {/* Hero */}
       <section style={{ background: '#2d2d2d', color: '#fff', paddingTop: '160px', paddingBottom: '80px', textAlign: 'center' }}>
         <div className="container">

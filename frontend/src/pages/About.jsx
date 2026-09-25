@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaLeaf, FaBullseye, FaLightbulb, FaShieldAlt, FaHandshake, FaBolt, FaArrowRight, FaMapMarkerAlt, FaUsers, FaCalendarAlt } from 'react-icons/fa';
 import AnimatedSection from '../components/AnimatedSection';
+import SEO from '../components/SEO';
 import { useCompany } from '../context/CompanyContext';
 
 const coreValues = [
@@ -40,6 +41,13 @@ export default function About() {
 
   return (
     <div className="page-wrapper">
+      <SEO
+        title="About Us — Mission, Vision & Engineering Team"
+        description="Learn about Aventrix Solutions — our vision, values, engineering culture, and commitment to building world-class web, mobile, and AI software."
+        keywords="about Aventrix Solutions, software development company Ahmedabad, IT team, software engineering mission, Aventrix About"
+        canonicalUrl="/about"
+      />
+
       {/* Hero */}
       <section style={{ background: '#2d2d2d', color: '#fff', paddingTop: '160px', paddingBottom: '80px', textAlign: 'center' }}>
         <div className="container">

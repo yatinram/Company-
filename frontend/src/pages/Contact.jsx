@@ -10,6 +10,7 @@ import {
   FaLeaf
 } from 'react-icons/fa';
 import AnimatedSection from '../components/AnimatedSection';
+import SEO from '../components/SEO';
 import { useCompany } from '../context/CompanyContext';
 import api from '../config/api';
 
@@ -61,6 +62,13 @@ export default function Contact() {
 
   return (
     <div className="page-wrapper">
+      <SEO
+        title="Contact Us — Hire Developers & Request a Demo"
+        description="Get in touch with Aventrix Solutions in Ahmedabad. Request a free quote for custom web, mobile, and AI software development or book a KrushiBill ERP demo."
+        keywords="contact Aventrix Solutions, hire web developers, software company contact Ahmedabad, request software quote"
+        canonicalUrl="/contact"
+      />
+
       {/* Hero */}
       <section style={{ background: '#2d2d2d', color: '#fff', paddingTop: '160px', paddingBottom: '80px', textAlign: 'center' }}>
         <div className="container">

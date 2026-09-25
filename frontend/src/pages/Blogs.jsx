@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaBookOpen, FaArrowRight, FaClock, FaUser } from 'react-icons/fa';
 import AnimatedSection from '../components/AnimatedSection';
+import SEO from '../components/SEO';
 
 const blogPosts = [
   {
@@ -36,6 +37,13 @@ const blogPosts = [
 export default function Blogs() {
   return (
     <div className="page-wrapper">
+      <SEO
+        title="Engineering Blogs, Tech Insights & Guides"
+        description="Read software engineering insights, web development tutorials, and technology trends from the Aventrix Solutions technical team."
+        keywords="software development blogs, tech articles, AI automation tutorials, React Nodejs guides, Aventrix Blogs"
+        canonicalUrl="/blogs"
+      />
+
       <section style={{ background: '#2d2d2d', color: '#fff', paddingTop: '160px', paddingBottom: '80px', textAlign: 'center' }}>
         <div className="container">
           <div style={{ maxWidth: '800px', margin: '0 auto' }}>

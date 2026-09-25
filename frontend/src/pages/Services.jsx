@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { FaArrowRight, FaCode, FaMobileAlt, FaGlobe, FaRobot, FaComments, FaServer, FaCloud, FaShieldAlt } from 'react-icons/fa';
 import AnimatedSection from '../components/AnimatedSection';
 import ServiceCard from '../components/ServiceCard';
+import SEO from '../components/SEO';
 import api from '../config/api';
 
 const fallbackServices = [
@@ -65,6 +66,13 @@ export default function Services() {
 
   return (
     <div className="page-wrapper">
+      <SEO
+        title="Custom Software, Web & Mobile Development Services"
+        description="Explore Aventrix Solutions' end-to-end technology services: Website Development, Mobile Apps (iOS & Android), AI Chatbots, Custom Software & Cloud Infrastructure."
+        keywords="web development services, mobile app development, custom software engineering, AI chatbot development, enterprise IT services, cloud solutions, Aventrix Services"
+        canonicalUrl="/services"
+      />
+
       {/* Hero Banner */}
       <section className="page-hero" style={{ background: '#2d2d2d', color: '#fff', paddingTop: '160px', paddingBottom: '80px', textAlign: 'center' }}>
         <div className="container">

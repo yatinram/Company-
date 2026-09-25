@@ -19,6 +19,7 @@ import {
   FaShieldAlt
 } from 'react-icons/fa';
 import AnimatedSection from '../components/AnimatedSection';
+import SEO from '../components/SEO';
 import api from '../config/api';
 
 const moduleIcons = {
@@ -93,6 +94,13 @@ export default function ProductDetail() {
 
   return (
     <div className="page-wrapper">
+      <SEO
+        title={`${product.name} — Agriculture Billing & ERP Software`}
+        description={product.description || `Explore ${product.name}, the specialized billing, inventory, and ledger ERP software for agricultural dealers by Aventrix Solutions.`}
+        keywords={`${product.name}, agriculture billing software, pesticide seeds ERP, GST billing ERP, Aventrix Solutions`}
+        canonicalUrl={`/products/${slug}`}
+      />
+
       {/* Product Hero */}
       <section style={{ background: '#2d2d2d', color: '#fff', paddingTop: '160px', paddingBottom: '90px' }}>
         <div className="container">

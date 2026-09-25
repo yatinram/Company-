@@ -1,0 +1,11 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Disallow private admin routes & login
+Disallow: /admin
+Disallow: /admin/*
+Disallow: /login
+
+# Sitemap location
+Sitemap: https://aventixsolutions.vercel.app/sitemap.xml
