@@ -93,6 +93,7 @@ export default function SEO({
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
+      <meta name="google-site-verification" content="bi1qn3wghtSRnnY8BcadaqW83-hJj76D5W4Px-_bvLA" />
       {noIndex ? (
         <meta name="robots" content="noindex, nofollow" />
       ) : (
