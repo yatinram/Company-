@@ -14,7 +14,7 @@
 
   <!-- Services -->
   <url>
-    <loc>https://aventixsolutions.vercel.app/services</loc>
+    <loc>https://aventrixsolutions.vercel.app/services</loc>
     <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -22,7 +22,7 @@
 
   <!-- Products -->
   <url>
-    <loc>https://aventixsolutions.vercel.app/products</loc>
+    <loc>https://aventrixsolutions.vercel.app/products</loc>
     <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -30,13 +30,13 @@
 
   <!-- Portfolio / Our Works -->
   <url>
-    <loc>https://aventixsolutions.vercel.app/our-works</loc>
+    <loc>https://aventrixsolutions.vercel.app/our-works</loc>
     <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aventixsolutions.vercel.app/work</loc>
+    <loc>https://aventrixsolutions.vercel.app/work</loc>
     <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -44,7 +44,7 @@
 
   <!-- Industries -->
   <url>
-    <loc>https://aventixsolutions.vercel.app/industries</loc>
+    <loc>https://aventrixsolutions.vercel.app/industries</loc>
     <lastmod>2026-09-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -52,7 +52,7 @@
 
   <!-- About Us -->
   <url>
-    <loc>https://aventixsolutions.vercel.app/about</loc>
+    <loc>https://aventrixsolutions.vercel.app/about</loc>
     <lastmod>2026-09-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -60,7 +60,7 @@
 
   <!-- Blogs -->
   <url>
-    <loc>https://aventixsolutions.vercel.app/blogs</loc>
+    <loc>https://aventrixsolutions.vercel.app/blogs</loc>
     <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -68,7 +68,7 @@
 
   <!-- Careers -->
   <url>
-    <loc>https://aventixsolutions.vercel.app/careers</loc>
+    <loc>https://aventrixsolutions.vercel.app/careers</loc>
     <lastmod>2026-09-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -76,7 +76,7 @@
 
   <!-- Contact Us -->
   <url>
-    <loc>https://aventixsolutions.vercel.app/contact</loc>
+    <loc>https://aventrixsolutions.vercel.app/contact</loc>
     <lastmod>2026-09-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
